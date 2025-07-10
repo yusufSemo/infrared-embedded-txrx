@@ -1,0 +1,184 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Mon Apr 28 15:42:34 2025
+
+OUTPUT FILE NAME:   <IRproject.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000c5d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000cac  0003f354  R  X
+  SRAM                  20000000   00008000  00000200  00007e00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000cac   00000cac    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000a40   00000a40    r-x .text
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000a40     
+                  0000026c    000004be     command_term.obj (.text)
+                  0000072a    00000002     --HOLE-- [fill = 0]
+                  0000072c    00000260     IRsend.obj (.text)
+                  0000098c    0000016c     main.obj (.text)
+                  00000af8    00000164     uart0.obj (.text)
+                  00000c5c    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  00000c88    00000010     clock.obj (.text)
+                  00000c98    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000ca4    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000ca8    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       command_term.obj               1214   0         0      
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       IRsend.obj                     608    0         0      
+       main.obj                       364    0         0      
+       uart0.obj                      356    0         0      
+       clock.obj                      16     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         2570   620       0      
+                                                              
+    C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       boot_cortex_m.c.obj            44     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         52     0         0      
+                                                              
+       Stack:                         0      0         512    
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   2622   620       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                   
+-------   ----                   
+00000ca9  C$$EXIT                
+00000c99  ResetISR               
+20000200  __STACK_END            
+00000200  __STACK_SIZE           
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+00000000  __TI_static_base__     
+ffffffff  __binit__              
+ffffffff  __c_args__             
+UNDEFED   __mpu_init             
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+00000c5d  _c_int00_noinit_noargs 
+00000ca5  _system_pre_init       
+00000ca9  abort                  
+ffffffff  binit                  
+0000098d  charToHex              
+0000072d  delayMicroseconds      
+00000000  g_pfnVectors           
+000005c5  getFieldInteger        
+00000595  getFieldString         
+00000bf9  getcUart0              
+0000026d  getsUart0              
+00000759  initIRTransmitter      
+000008f1  initPD1forCapture      
+0000089d  initReceiveTimer       
+00000c89  initSystemClockTo40Mhz 
+00000af9  initUart0              
+00000661  isCommand              
+00000c0d  kbhitUart0             
+00000a07  main                   
+000002e1  parseFields            
+000009e9  parseHexByte           
+00000bb1  putcUart0              
+00000bcd  putsUart0              
+00000789  send38kBurst           
+00000887  sendEndBit             
+000007f5  sendIRCommand          
+000007d7  sendNECPreamble        
+00000b6d  setUart0BaudRate       
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                   
+-------   ----                   
+00000000  __TI_static_base__     
+00000000  g_pfnVectors           
+00000200  __STACK_SIZE           
+0000026d  getsUart0              
+000002e1  parseFields            
+00000595  getFieldString         
+000005c5  getFieldInteger        
+00000661  isCommand              
+0000072d  delayMicroseconds      
+00000759  initIRTransmitter      
+00000789  send38kBurst           
+000007d7  sendNECPreamble        
+000007f5  sendIRCommand          
+00000887  sendEndBit             
+0000089d  initReceiveTimer       
+000008f1  initPD1forCapture      
+0000098d  charToHex              
+000009e9  parseHexByte           
+00000a07  main                   
+00000af9  initUart0              
+00000b6d  setUart0BaudRate       
+00000bb1  putcUart0              
+00000bcd  putsUart0              
+00000bf9  getcUart0              
+00000c0d  kbhitUart0             
+00000c5d  _c_int00_noinit_noargs 
+00000c89  initSystemClockTo40Mhz 
+00000c99  ResetISR               
+00000ca5  _system_pre_init       
+00000ca9  C$$EXIT                
+00000ca9  abort                  
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+20000200  __STACK_END            
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+ffffffff  __binit__              
+ffffffff  __c_args__             
+ffffffff  binit                  
+UNDEFED   __mpu_init             
+
+[43 symbols]
