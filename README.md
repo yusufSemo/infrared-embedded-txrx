@@ -2,8 +2,14 @@
 
 This project implements an IR signal transmitter and decoder using the **TM4C123GXL (Tiva-C)** microcontroller. It sends NEC protocol IR signals using a hand-soldered IR LED circuit and receives IR codes using a TSOP134 receiver module. Useful for controlling TVs or learning remote codes.
 
-![IR Transmitter Circuit](circuit_diagram_tx.jpg)  
-![IR Receiver Circuit](circuit_diagram_rx.jpg)
+<p align="center">
+  <img src="https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/Circuit.png?raw=true" alt="IR Transmitter Circuit" height="220"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/PhysicalCircuit.png?raw=true" alt="Physical Breadboard Circuit" height="220"/>
+</p>
+
+
+
 
 > Developed by **Yusuf Semo** — built entirely from scratch using low-level C, GPIO, PWM, and UART. Designed for embedded learning, IR remote control emulation, and custom hardware development.
 
@@ -22,7 +28,7 @@ This project implements an IR signal transmitter and decoder using the **TM4C123
 
 ---
 
-## 🧰 Hardware Used
+##  Hardware Used
 
 | Component             | Description                                     |
 |-----------------------|-------------------------------------------------|
@@ -32,10 +38,13 @@ This project implements an IR signal transmitter and decoder using the **TM4C123
 | Custom Circuit        | Hand-soldered components with perfboard         |
 | UART Serial Terminal  | Used for interactive commands & debugging       |
 
-📄 Included Docs:
-- [IR333-A Datasheet](IR333_A_datasheet.pdf)
-- [TSOP134 Receiver Datasheet](tsop134.pdf)
-- [TI NEC IR Protocol App Note](slaa644b.pdf)
+### 📄 Included Docs
+
+- [IR333-A Datasheet](https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/IR333_A_datasheet.pdf)
+- [TSOP134 Receiver Datasheet](https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/tsop134.pdf)
+- [TI App Note: SLAA644B - Infrared Modulation Techniques](https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/slaa644b.pdf)
+- [Captured Signal Timing Form (dataform.pdf)](https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/dataform.pdf)
+
 
 ---
 
@@ -57,7 +66,7 @@ Each command is repeated **10x** in a row to ensure the receiving TV or device c
 
 ---
 
-## 🧪 Usage
+##  Usage
 
 ### 1. Open in Code Composer Studio
 - Clone or download the project
@@ -75,7 +84,7 @@ send 20 DF 6A 95
 
 ---
 
-## 🔧 Wiring Overview
+## Wiring Overview
 
 ### IR Transmitter (TX)
 - **IR333 LED** → PC4 (GPIO)
@@ -89,10 +98,9 @@ send 20 DF 6A 95
 
 ---
 
-## 📸 Project Images
+## data flow Image
 
-| ![Transmitter](img/tx_board.jpg) | ![Receiver](img/rx_module.jpg) |
-|----------------------------------|--------------------------------|
+<p align="center"> <img src="https://github.com/yusufSemo/infrared-embedded-txrx/blob/main/4cope_signal.png?raw=true" alt="Captured Oscilloscope Signal" height="240"/> </p>
 
 ---
 
